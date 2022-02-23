@@ -22,7 +22,7 @@ if(isset($_POST['update'])){
     $query2 = "UPDATE task SET titulo = '$title', descripcion = '$description' WHERE id = '$id';";
     mysqli_query($conn, $query2); 
 
-    $_SESSION['message'] = 'Tarea actualizada';
+    $_SESSION['message'] = 'Nota actualizada';
     $_SESSION['message_type'] = 'primary';
     header("Location: ../index.php");
 
@@ -38,6 +38,7 @@ if(isset($_POST['update'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/bootstrap.css">
     <script src="https://kit.fontawesome.com/7d49ec5fe9.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/backgroundStyle.css">
     <title>Edit</title>
 </head>
 <body>
@@ -49,19 +50,31 @@ if(isset($_POST['update'])){
              
         </div>
     </nav>
+
+<section>
+        <div class="layer layer1"></div>
+        <div class="layer layer2"></div>
+        <div class="layer layer3"></div>
+        <div class="layer layer4"></div>
+        <div class="layer layer5"></div>
+        <div class="layer layer6"></div>
+        <div class="layer layer7"></div>
+        <div class="layer layer8"></div>
+        <div class="layer layer9"></div>
+</section>
 <div class="container p-4">
     <div class="row">
         <div class="col-md-4 mx-auto">
-            <div class="card card-body">
+            <div class="card card-body card-edit">
                 <form action="edit.php?id=<?php echo $_GET['id'];?>" method="POST">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Update Title" name="title" value="<?php echo $title ?>">
+                        <input type="text" class="form-control" placeholder="Actualizar titulo" name="title" value="<?php echo $title ?>">
                     </div>
                     <div class="form-group">
-                        <textarea name="description" rows="2" class="form-control" placeholder="Update description"><?php echo $description ?></textarea>
+                        <textarea name="description" rows="2" class="form-control" placeholder="Actualizar descripcion"><?php echo $description ?></textarea>
                     </div>
                     <button class="btn btn-success" name="update">
-                        Update
+                        Actualizar
                     </button>
                 </form>
             </div>

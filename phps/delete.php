@@ -8,7 +8,7 @@ if(isset($_GET['id'])){
     if(!$rs){
         die("Query failed");
     }
-    $_SESSION['message'] = 'Task Removed Succesfully';
+    $_SESSION['message'] = 'Nota eliminada!';
     $_SESSION['message_type'] = 'danger';
     header("Location: ../index.php");
  
